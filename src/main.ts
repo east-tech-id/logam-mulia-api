@@ -5,10 +5,9 @@ import { ClassSerializerInterceptor, ValidationPipe } from '@nestjs/common';
 import { ErrorFilter } from './core/filters/error.filter';
 import { CustomValidationPipe } from './core/pipes/custom-validation.pipe';
 import { useContainer } from 'class-validator';
-import { FastifyAdapter } from '@nestjs/platform-fastify';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule, new FastifyAdapter());
+  const app = await NestFactory.create(AppModule);
   useContainer(app.select(AppModule), { fallbackOnErrors: true });
 
   app.useGlobalPipes(new CustomValidationPipe());

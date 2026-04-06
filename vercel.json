@@ -1,20 +1,15 @@
 {
   "version": 2,
-  "buildCommand": "yarn build",
-  "devCommand": "yarn dev",
-  "installCommand": "yarn install",
-  "outputDirectory": "dist",
-  "name": "capeon-api",
   "builds": [
     {
-      "src": "src/main.ts",
+      "src": "api/index.ts",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "src/main.ts",
+      "dest": "api/index.ts",
       "methods": ["GET", "POST", "PUT", "DELETE"]
     }
   ]

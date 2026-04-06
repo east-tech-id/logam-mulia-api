@@ -59,7 +59,8 @@ export class CrawlerService {
     private readonly configService: ConfigService,
     private readonly httpService: HttpService
   ) {
-    this.isModeAwsLambda = this.configService.get("APP_AWS_LAMBDA_FUNCTION");
+    const lambdaValue = this.configService.get("APP_AWS_LAMBDA_FUNCTION");
+    this.isModeAwsLambda = lambdaValue === true || lambdaValue === 'true';
     this.isHeadless = this.configService.get("APP_HEADLESS");
     this.useMirror = this.configService.get("APP_USE_MIRROR");
     this.urlMirror = this.configService.get("APP_MIRROR_URL");

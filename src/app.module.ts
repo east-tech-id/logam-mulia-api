@@ -16,7 +16,7 @@ import Joi = require('@hapi/joi');
       isGlobal: true,
       validationSchema: Joi.object({
         APP_MODE: Joi.string().required(),
-        APP_AWS_LAMBDA_FUNCTION: Joi.boolean().required(),
+        APP_AWS_LAMBDA_FUNCTION: Joi.any().required(),
         // DATABASE_HOST: Joi.string().required(),
         // DATABASE_PORT: Joi.number().required(),
         // DATABASE_USER: Joi.string().required(),

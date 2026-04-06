@@ -2,3 +2,4 @@
 /examples
 /dist
 .env
+.vercel
